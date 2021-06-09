@@ -1,0 +1,52 @@
+edition: 1.0.0
+name: jamstack-website
+vars:
+  domain: {{domain}}.resume.net.cn
+  frontendSouceCode: frontend # 前端文件目录
+  myapiSourceCode: myapi # api文件目录
+services:
+  api:  # 动态api
+    component: jamstack-api
+    actions:
+      pre-deploy:
+        - run: npm i
+          path: ${vars.myapiSourceCode}
+    props:
+      sourceCode: ${vars.myapiSourceCode}
+      route:
+        - /
+        - /login
+        - /user
+        - /outLogin
+        - /notices
+  website: # 静态文件
+    component: jamstack
+    actions: # 如果依赖已经安装好可以注释掉
+      pre-deploy:
+        - run: npm i
+          path: ${vars.frontendSouceCode}
+    props:
+      domain: ${vars.domain}
+      favicon: false
+      defaultApp: frontend
+      apps:
+        - name: frontend
+          type: jamstack
+          redirects: config/frontend_redirects # 指定一个重定向文件，解决 browserHistory 和 空页面问题 非必填
+          sourceCode: ${vars.frontendSouceCode}
+          paths:
+            - /
+            - /~frontend
+          indexFile: index.html
+          page404Url: 404.html
+        - name: myapi
+          type: backend
+          paths:
+            - /~myapi
+          proxyUrl: ${api.output[0].customDomains[0].domainName}
+  markdownContent: #markup 这部分也可以直接通过无配置式执行 s cli kv put <key> <value>
+    component: kv
+    props:
+      domain: ${vars.domain}
+      key: intro.md
+      value: conifg/static/intro.md
