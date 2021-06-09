@@ -3,12 +3,7 @@
 配置好阿里云的秘钥信息
 ## 快速开始
 
-填写好自定义二级域名（一级域名为固定 resume.net.cn）,执行指令
-```
-s init start-jamstack 
-
-```
-输入项目名<porjectName>，输入自定义二级域名,进入 <projectName> 目录，执行
+进入根目录下执行
 ```
 s deploy
 ```
