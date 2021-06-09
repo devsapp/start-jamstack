@@ -49,4 +49,4 @@ services:
     props:
       domain: ${vars.domain}
       key: intro.md
-      value: conifg/static/intro.md
+      value: config/static/intro.md
