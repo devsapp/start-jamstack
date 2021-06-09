@@ -5,6 +5,11 @@
 
 填写好自定义二级域名（一级域名为固定 resume.net.cn）,执行指令
 ```
+s init start-jamstack 
+
+```
+输入项目名<porjectName>，输入自定义二级域名,进入 <projectName> 目录，执行
+```
 s deploy
 ```
 访问返回的 <自定义域名>.resume.net.cn </br>
@@ -34,3 +39,6 @@ markdownContent 管理发布静态markdown文档
 三个服务可以进行全量部署，会自动解析相关的依赖，比如 website依赖 api 的结果输出，如果你做单独部署的话，可以保存api 返回的域名直接替换 proxyUrl
 
 其他的服务都可以独立部署
+
+## 其他补充
+本身markdown 内容不需要每次部署，更新 config/static/intro.md之后只需要 使用 s cli kv put intro.md config/static/infro.md 更新线上内容即可
