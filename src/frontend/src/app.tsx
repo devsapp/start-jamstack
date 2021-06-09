@@ -1,4 +1,6 @@
+
 import type { Settings as LayoutSettings } from '@ant-design/pro-layout';
+import cookie from 'cookie';
 import { PageLoading } from '@ant-design/pro-layout';
 import { notification } from 'antd';
 import type { RequestConfig, RunTimeLayoutConfig } from 'umi';
@@ -25,12 +27,19 @@ export async function getInitialState(): Promise<{
   fetchUserInfo?: () => Promise<API.CurrentUser | undefined>;
 }> {
   const fetchUserInfo = async () => {
-    try {
-      const currentUser = await queryCurrentUser();
-      return currentUser;
-    } catch (error) {
+    const cookieParse = cookie.parse(document.cookie);
+    if (!cookieParse.antd_login) {
       history.push(loginPath);
+    } else {
+      try {
+        const currentUser = await queryCurrentUser();
+        return currentUser;
+      } catch (error) {
+        history.push(loginPath);
+      }
     }
+
+
     return undefined;
   };
   // 如果是登录页面，不执行
@@ -118,15 +127,15 @@ export const layout: RunTimeLayoutConfig = ({ initialState }) => {
     },
     links: isDev
       ? [
-          <Link to="/umi/plugin/openapi" target="_blank">
-            <LinkOutlined />
-            <span>openAPI 文档</span>
-          </Link>,
-          <Link to="/~docs">
-            <BookOutlined />
-            <span>业务组件文档</span>
-          </Link>,
-        ]
+        <Link to="/umi/plugin/openapi" target="_blank">
+          <LinkOutlined />
+          <span>openAPI 文档</span>
+        </Link>,
+        <Link to="/~docs">
+          <BookOutlined />
+          <span>业务组件文档</span>
+        </Link>,
+      ]
       : [],
     menuHeaderRender: undefined,
     // 自定义 403 页面

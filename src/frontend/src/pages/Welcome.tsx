@@ -16,28 +16,25 @@ const CodePreview: React.FC = ({ children }) => (
 );
 
 export default (): React.ReactNode => {
-  const intl = useIntl();
-  const [title, setTitle] = useState('');
+  // const intl = useIntl();
+  let [title, setTitle] = useState('');
+
   const [markdown, setMarkdown] = useState('markdown desc');
-
-
   useEffect(() => {
-    //  const result = await fetchUserInfo();
     (async function initFunction() {
-      let _title = '';
       let _markdownContent = ''
       try {
         const result = await getApi('/');
         const result2 = await getStaticContent('/intro.md');
-        _title = result.data.title;
+        title = result.data.title;
         _markdownContent = result2.data;
       } catch (e) {
       }
       setMarkdown(_markdownContent);
-      setTitle(_title);
-    })();
+      setTitle(title);
 
-  });
+    })();
+  }, [title]);
   return (
     <PageContainer>
       <Card>

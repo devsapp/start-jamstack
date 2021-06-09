@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react';
+import cookie from 'cookie';
 import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
 import { Avatar, Menu, Spin } from 'antd';
 import { history, useModel } from 'umi';
@@ -16,6 +17,9 @@ export type GlobalHeaderRightProps = {
  */
 const loginOut = async () => {
   await outLogin();
+  const cookieParse = cookie.parse(document.cookie);
+  delete cookieParse.antd_login;
+  document.cookie = Object.keys(cookieParse).map((key) => `${key}=${cookieParse[key]}`).join(';');
   const { query = {}, pathname } = history.location;
   const { redirect } = query;
   // Note: There may be security issues, please note
