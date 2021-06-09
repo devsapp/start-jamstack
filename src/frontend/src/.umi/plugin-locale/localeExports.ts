@@ -3,11 +3,11 @@ import {
   createIntl,
   IntlShape,
   MessageDescriptor,
-} from '/Users/hanxie/localproject/hanxiet01/frontend/node_modules/react-intl';
+} from '/Users/hanxie/localproject/hanxiet02/frontend/node_modules/react-intl';
 import { ApplyPluginsType } from 'umi';
 import { event, LANG_CHANGE_EVENT } from './locale';
 // @ts-ignore
-import warning from '/Users/hanxie/localproject/hanxiet01/frontend/node_modules/warning/warning.js';
+import warning from '/Users/hanxie/localproject/hanxiet02/frontend/node_modules/warning/warning.js';
 
 import { plugin } from '../core/plugin';
 
@@ -34,7 +34,7 @@ export {
   defineMessages,
   injectIntl,
   useIntl,
-} from '/Users/hanxie/localproject/hanxiet01/frontend/node_modules/react-intl';
+} from '/Users/hanxie/localproject/hanxiet02/frontend/node_modules/react-intl';
 
 let g_intl: IntlShape;
 
@@ -51,7 +51,7 @@ import zhTW0 from 'antd/es/locale/zh_TW';
 export const localeInfo: {[key: string]: any} = {
   'en-US': {
     messages: {
-      ...((locale) => locale.__esModule ? locale.default : locale)(require('/Users/hanxie/localproject/hanxiet01/frontend/src/locales/en-US.ts')),
+      ...((locale) => locale.__esModule ? locale.default : locale)(require('/Users/hanxie/localproject/hanxiet02/frontend/src/locales/en-US.ts')),
     },
     locale: 'en-US',
     antd: {
@@ -61,7 +61,7 @@ export const localeInfo: {[key: string]: any} = {
   },
   'fa-IR': {
     messages: {
-      ...((locale) => locale.__esModule ? locale.default : locale)(require('/Users/hanxie/localproject/hanxiet01/frontend/src/locales/fa-IR.ts')),
+      ...((locale) => locale.__esModule ? locale.default : locale)(require('/Users/hanxie/localproject/hanxiet02/frontend/src/locales/fa-IR.ts')),
     },
     locale: 'fa-IR',
     antd: {
@@ -71,7 +71,7 @@ export const localeInfo: {[key: string]: any} = {
   },
   'id-ID': {
     messages: {
-      ...((locale) => locale.__esModule ? locale.default : locale)(require('/Users/hanxie/localproject/hanxiet01/frontend/src/locales/id-ID.ts')),
+      ...((locale) => locale.__esModule ? locale.default : locale)(require('/Users/hanxie/localproject/hanxiet02/frontend/src/locales/id-ID.ts')),
     },
     locale: 'id-ID',
     antd: {
@@ -81,7 +81,7 @@ export const localeInfo: {[key: string]: any} = {
   },
   'ja-JP': {
     messages: {
-      ...((locale) => locale.__esModule ? locale.default : locale)(require('/Users/hanxie/localproject/hanxiet01/frontend/src/locales/ja-JP.ts')),
+      ...((locale) => locale.__esModule ? locale.default : locale)(require('/Users/hanxie/localproject/hanxiet02/frontend/src/locales/ja-JP.ts')),
     },
     locale: 'ja-JP',
     antd: {
@@ -91,7 +91,7 @@ export const localeInfo: {[key: string]: any} = {
   },
   'pt-BR': {
     messages: {
-      ...((locale) => locale.__esModule ? locale.default : locale)(require('/Users/hanxie/localproject/hanxiet01/frontend/src/locales/pt-BR.ts')),
+      ...((locale) => locale.__esModule ? locale.default : locale)(require('/Users/hanxie/localproject/hanxiet02/frontend/src/locales/pt-BR.ts')),
     },
     locale: 'pt-BR',
     antd: {
@@ -101,7 +101,7 @@ export const localeInfo: {[key: string]: any} = {
   },
   'zh-CN': {
     messages: {
-      ...((locale) => locale.__esModule ? locale.default : locale)(require('/Users/hanxie/localproject/hanxiet01/frontend/src/locales/zh-CN.ts')),
+      ...((locale) => locale.__esModule ? locale.default : locale)(require('/Users/hanxie/localproject/hanxiet02/frontend/src/locales/zh-CN.ts')),
     },
     locale: 'zh-CN',
     antd: {
@@ -111,7 +111,7 @@ export const localeInfo: {[key: string]: any} = {
   },
   'zh-TW': {
     messages: {
-      ...((locale) => locale.__esModule ? locale.default : locale)(require('/Users/hanxie/localproject/hanxiet01/frontend/src/locales/zh-TW.ts')),
+      ...((locale) => locale.__esModule ? locale.default : locale)(require('/Users/hanxie/localproject/hanxiet02/frontend/src/locales/zh-TW.ts')),
     },
     locale: 'zh-TW',
     antd: {

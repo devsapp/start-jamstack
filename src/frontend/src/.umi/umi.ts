@@ -4,8 +4,8 @@ import '../global.tsx';
 import { plugin } from './core/plugin';
 import './core/pluginRegister';
 import { createHistory } from './core/history';
-import { ApplyPluginsType } from '/Users/hanxie/localproject/hanxiet01/frontend/node_modules/@umijs/runtime';
-import { renderClient } from '/Users/hanxie/localproject/hanxiet01/frontend/node_modules/@umijs/renderer-react/dist/index.js';
+import { ApplyPluginsType } from '/Users/hanxie/localproject/hanxiet02/frontend/node_modules/@umijs/runtime';
+import { renderClient } from '/Users/hanxie/localproject/hanxiet02/frontend/node_modules/@umijs/renderer-react/dist/index.js';
 import { getRoutes } from './core/routes';
 
 

@@ -1,11 +1,17 @@
 
 const { dk } = require('@serverless-devs/dk');
-
+const cookie = require('cookie');
 const handler = dk((ctx) => {
     const { password, username, type } = ctx.req.body;
     if (password === 'ant.design' && username === 'admin') {
-        access = 'admin';
         return {
+            headers: {
+                'Set-Cookie': cookie.serialize('antd_login', String(username), {
+                    httpOnly: false,
+                    path: '/',
+                    maxAge: 60 * 60 * 24 * 7 // 1 week
+                })
+            },
             json: {
                 status: 'ok',
                 type,
@@ -14,9 +20,14 @@ const handler = dk((ctx) => {
         };
     }
     if (password === 'ant.design' && username === 'user') {
-
-        access = 'user';
         return {
+            headers: {
+                'Set-Cookie': cookie.serialize('antd_login', String(username), {
+                    httpOnly: false,
+                    path: '/',
+                    maxAge: 60 * 60 * 24 * 7 // 1 week
+                })
+            },
             json: {
                 status: 'ok',
                 type,
@@ -25,8 +36,15 @@ const handler = dk((ctx) => {
         };
     }
     if (type === 'mobile') {
-
+        
         return {
+            headers: {
+                'Set-Cookie': cookie.serialize('antd_login', String(username), {
+                    httpOnly: false,
+                    path: '/',
+                    maxAge: 60 * 60 * 24 * 7 // 1 week
+                })
+            },
             json: {
                 status: 'ok',
                 type,
@@ -34,7 +52,6 @@ const handler = dk((ctx) => {
             }
         };
     }
-    access = 'guest';
     return {
         json: {
             status: 'error',

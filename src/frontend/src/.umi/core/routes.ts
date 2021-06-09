@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from 'react';
-import { ApplyPluginsType, dynamic } from '/Users/hanxie/localproject/hanxiet01/frontend/node_modules/@umijs/runtime';
+import { ApplyPluginsType, dynamic } from '/Users/hanxie/localproject/hanxiet02/frontend/node_modules/@umijs/runtime';
 import * as umiExports from './umiExports';
 import { plugin } from './plugin';
 import LoadingComponent from '@ant-design/pro-layout/es/PageLoading';
@@ -9,7 +9,7 @@ export function getRoutes() {
   const routes = [
   {
     "path": "/",
-    "component": dynamic({ loader: () => import(/* webpackChunkName: '.umi__plugin-layout__Layout' */'/Users/hanxie/localproject/hanxiet01/frontend/src/.umi/plugin-layout/Layout.tsx'), loading: LoadingComponent}),
+    "component": dynamic({ loader: () => import(/* webpackChunkName: '.umi__plugin-layout__Layout' */'/Users/hanxie/localproject/hanxiet02/frontend/src/.umi/plugin-layout/Layout.tsx'), loading: LoadingComponent}),
     "routes": [
       {
         "path": "/user",
@@ -21,7 +21,7 @@ export function getRoutes() {
               {
                 "name": "login",
                 "path": "/user/login",
-                "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__user__Login' */'/Users/hanxie/localproject/hanxiet01/frontend/src/pages/user/Login'), loading: LoadingComponent}),
+                "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__user__Login' */'/Users/hanxie/localproject/hanxiet02/frontend/src/pages/user/Login'), loading: LoadingComponent}),
                 "exact": true
               }
             ]
@@ -32,7 +32,7 @@ export function getRoutes() {
         "path": "/welcome",
         "name": "welcome",
         "icon": "smile",
-        "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__Welcome' */'/Users/hanxie/localproject/hanxiet01/frontend/src/pages/Welcome'), loading: LoadingComponent}),
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__Welcome' */'/Users/hanxie/localproject/hanxiet02/frontend/src/pages/Welcome'), loading: LoadingComponent}),
         "exact": true
       },
       {
@@ -40,13 +40,13 @@ export function getRoutes() {
         "name": "admin",
         "icon": "crown",
         "access": "canAdmin",
-        "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__Admin' */'/Users/hanxie/localproject/hanxiet01/frontend/src/pages/Admin'), loading: LoadingComponent}),
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__Admin' */'/Users/hanxie/localproject/hanxiet02/frontend/src/pages/Admin'), loading: LoadingComponent}),
         "routes": [
           {
             "path": "/admin/sub-page",
             "name": "sub-page",
             "icon": "smile",
-            "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__Welcome' */'/Users/hanxie/localproject/hanxiet01/frontend/src/pages/Welcome'), loading: LoadingComponent}),
+            "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__Welcome' */'/Users/hanxie/localproject/hanxiet02/frontend/src/pages/Welcome'), loading: LoadingComponent}),
             "exact": true
           }
         ]
@@ -55,7 +55,7 @@ export function getRoutes() {
         "name": "list.table-list",
         "icon": "table",
         "path": "/list",
-        "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__TableList' */'/Users/hanxie/localproject/hanxiet01/frontend/src/pages/TableList'), loading: LoadingComponent}),
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__TableList' */'/Users/hanxie/localproject/hanxiet02/frontend/src/pages/TableList'), loading: LoadingComponent}),
         "exact": true
       },
       {
@@ -64,7 +64,7 @@ export function getRoutes() {
         "exact": true
       },
       {
-        "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__404' */'/Users/hanxie/localproject/hanxiet01/frontend/src/pages/404'), loading: LoadingComponent}),
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'p__404' */'/Users/hanxie/localproject/hanxiet02/frontend/src/pages/404'), loading: LoadingComponent}),
         "exact": true
       }
     ]

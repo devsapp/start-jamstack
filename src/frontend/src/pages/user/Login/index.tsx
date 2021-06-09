@@ -68,8 +68,8 @@ const Login: React.FC = () => {
           defaultMessage: '登录成功！',
         });
         message.success(defaultloginSuccessMessage);
-        document.cookie = document.cookie + ';antd_login=hello'
         await fetchUserInfo();
+        console.log('ss');
         goto();
         return;
       }
