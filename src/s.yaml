@@ -32,7 +32,7 @@ services:
       apps:
         - name: frontend
           type: jamstack
-          redirects: config/frontend_redirects # 指定一个重定向文件，解决 browserHistory 和 空页面问题 非必填
+          # redirects: config/frontend_redirects # 指定一个重定向文件，解决 browserHistory 和 空页面问题 非必填
           sourceCode: ${vars.frontendSouceCode}
           paths:
             - /
