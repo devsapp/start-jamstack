@@ -1,43 +1,44 @@
-# 基于antd-pro 的 Jamsatck站点 
-## 前置条件
-配置好阿里云的秘钥信息
-## 快速开始
+# 使用Serverlessdevs 快速构建性能极致的jamstack站点
+
+## 快速开始 - serverless desktop篇
+### 安装 serverless desktop 
+访问 www.serverless-devs.com 下载对应版本的客户端工具
+
+### 进入serverless hub 选择 start-jamstack 模板
+
+
+
+## 快速开始 - serverless cli篇
+
+
+### 安装 serverless devs cli (已安装请忽略)
+```
+npm i @serverless-devs/s -g
+```
+
+### 准备阿里云秘钥 
+详细的阿里云秘钥信息获取查看
+```
+s conifg add 
+```
+### 开发部署
+#### step1 初始化
+
 ```
 s init start-jamstack 
 
 ```
 
-输入项目名<porjectName>，输入自定义二级域名,进入 <projectName> 目录，执行
+输入项目名<porjectName>，输入自定义二级域名 <customerdoman>.resume.net.cn (resume.net.cn 是我们免费提供的一级域名，用户只需要填写自己的二级域名，注意保证唯一性)
+
+#### 构建部署
+进入 <projectName> 
 ```
 s deploy
 ```
 访问返回的 <自定义域名>.resume.net.cn </br>
-需要登录的话可以按照提示输入账号密码 user/ant.design 
 
 
 
 
-## 目录结构说明
 
-+ -- config  // 配置文件，包含站点的静态文档配置以及站点应用的重定向配置
-+ -- frontend // 前端工程，使用antd pro 构建， 适配了一下后端的api 接口
-+ -- api  // 后端工程，采用函数写法，直接部署到 fc 上，包含5个接口，mock 数据
-
-
-## 配置说明
-### 配置基本信息包含 vars 下面的三个变量
-+ domain: <xxx>  // 域名信息,必填
-+ frontendSouceCode: frontend  // 前端工程代码 ，必填
-+ myapiSourceCode: myapi // api 代码 ， 必填
-
-### 三个服务
-+ api 管理发布api
-+ website 管理发布静态站点
-+ markdownContent 管理发布静态markdown文档
-
-三个服务可以进行全量部署，会自动解析相关的依赖，比如 website依赖 api 的结果输出，如果你做单独部署的话，可以保存api 返回的域名直接替换 proxyUrl
-
-其他的服务都可以独立部署
-
-## 其他补充
-本身markdown 内容不需要每次部署，更新 config/static/intro.md之后只需要 使用 s cli kv put intro.md config/static/infro.md 更新线上内容即可
