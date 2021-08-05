@@ -1,9 +1,9 @@
 Type: Application
 Name: start-jamstack
-Version: 0.0.9
+Version: 0.0.11
 Category: Web框架
 HomePage: 'https://github.com/devsapp/start-jamstack'
 Tags:
   - jamstack
   - 全栈应用
-Description: 使用serverless devs 快速构建 性能极致的jamstack站点
+Description: 使用Serverless Devs 快速构建 性能极致的jamstack站点
